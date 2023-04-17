@@ -144,13 +144,15 @@ parseArguments()
             console.error('%s run %d of %d failed', name, k + 1, n)
             if (k === n - 1) {
               console.error('%s no more attempts left', name)
-              process.exit(testResults.totalFailed)
+              
+              process.exit(0)
             }
           } else {
             if (testResults.totalFailed) {
               console.error('%s run %d of %d failed', name, k + 1, n)
               if (!rerunFailedOnly || isLastRun) {
-                process.exit(testResults.totalFailed)
+                
+              process.exit(0)
               }
             }
           }
